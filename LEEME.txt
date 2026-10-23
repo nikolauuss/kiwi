@@ -1,0 +1,231 @@
+KIWIZASO - Windows 10 / 11
+================================
+
+IMPORTANTE: úselo solo en su computador personal, nunca en un equipo de trabajo.
+Use una cuenta de Windows con permisos de administrador.
+
+
+CÓMO USARLO
+-----------
+Todo está en un solo archivo: Kiwizaso.exe
+
+1. Copie Kiwizaso.exe al computador (por ejemplo, con un pendrive).
+2. Doble clic -> acepte el permiso de administrador -> se abre la app.
+   (Si Windows muestra "Windows protegió su PC": "Más información" -> "Ejecutar de todas formas".
+   Aparece porque el archivo no está firmado, no porque tenga virus.)
+3. Marque lo que quiere aplicar (ya vienen marcadas las opciones recomendadas),
+   marque en "Arranque de Windows" los programas que no quiere que inicien solos
+   y presione "Optimizar ahora".
+4. Reinicie el computador.
+5. Antes de jugar, abra la app y presione "Activar Modo Juego". Puede minimizarla.
+
+Para volver todo atrás: botón "Deshacer todos los cambios" y reinicie.
+Además, antes de optimizar se crea un punto de restauración de Windows.
+El respaldo queda en C:\Kiwizaso\respaldo.json (no lo borre).
+
+
+QUÉ HACE
+--------
+- Quita apps preinstaladas: Noticias, Clima, Solitario, Teams, Copilot, Clipchamp,
+  Candy Crush, etc. Opcional: Xbox y OneDrive.
+- Desactiva la telemetría, los anuncios, las sugerencias, Bing, Copilot y los widgets.
+- Deshabilita servicios innecesarios, más un "modo agresivo" (diagnóstico, sensores,
+  teléfono, control parental, archivos sin conexión, registro remoto). Opcional:
+  impresora, SysMain (solo con SSD) e indexado de búsqueda.
+- Agrupa los procesos de servicio de Windows (svchost): de ~80 a ~40.
+- Navegadores livianos (Edge, Chrome y Brave): no quedan corriendo al cerrarlos y se
+  apagan la barra lateral, compras, Copilot, Rewards, Wallet, VPN, noticias e IA.
+  Mostrarán "administrado por su organización"; es normal y se quita al deshacer.
+- Drivers: detecta su procesador y tarjeta de video, muestra la versión instalada y
+  abre la página oficial (NVIDIA App, AMD o Intel) que baja el driver correcto.
+  La app no descarga instaladores de otros sitios.
+- Nunca deshabilita red, audio, seguridad ni Vanguard. Bluetooth y el
+  descubrimiento de red solo si usted marca esas casillas.
+- Windows 11 más cómodo: menú de clic derecho clásico e Inicio sin Recomendaciones.
+- Revisión del equipo: avisa si la RAM está sin XMP, si el monitor está bajo su
+  máximo de Hz, si el driver de video es antiguo o si el disco está lleno o con
+  problemas. También muestra las 5 apps que más RAM usan, con botón para cerrarlas.
+- Windows Update estilo LTSC: recibe parches de seguridad, pero difiere 365 días
+  los cambios de versión y no reinicia solo. (En Windows Home esto no aplica.)
+- Modo Juego, sin grabación de fondo (Game DVR), prioridad de CPU/GPU para juegos,
+  programación de GPU acelerada por hardware y mouse sin aceleración.
+- Efectos visuales y transparencias al mínimo.
+- Limpia temporales, caché de Windows Update y, opcional, componentes antiguos.
+
+
+GAMA DE SU PC (se detecta sola; se puede cambiar en Limpieza -> "Gama de su PC")
+------------------------------------------------------------------------------
+Se calcula con la RAM, los hilos de CPU, el disco (HDD, SSD o NVMe) y si hay
+tarjeta de video dedicada. Cada gama marca sus casillas recomendadas:
+- Ultra baja / Baja: todo al mínimo (efectos visuales, más servicios, indexado
+  fuera) y el Modo Juego cierra navegadores y launchers. La compresión de memoria
+  y SysMain se mantienen: con poca RAM o con HDD ayudan.
+- Media: equilibrio. Limpieza completa y plan de energía al máximo.
+- Media alta / Alta: latencia ante todo. Plan Extremo en desktop y, en gama alta
+  con 16 GB o más, sin compresión de memoria. Los efectos visuales se pueden dejar.
+
+Lo que las mediciones muestran como placebo o dañino NO se aplica: HPET
+o "disabledynamictick" en bcdedit, NetworkThrottlingIndex, desactivar el archivo
+de paginación, o vaciar la RAM a cada rato. Si otro programa dejó ajustes
+de reloj en bcdedit, la Revisión los detecta y ofrece repararlos.
+
+
+PERFIL DESKTOP O NOTEBOOK (se detecta solo)
+-------------------------------------------
+- Desktop: plan "Kiwizaso Máximo" o "Kiwizaso Extremo".
+- Notebook: plan "Kiwizaso Notebook", al máximo enchufado y con ahorro con batería.
+  El plan Extremo y el nivel Ultra quedan bloqueados (calientan demasiado un
+  notebook), y por defecto se mantienen la hibernación y los sensores.
+
+Plan Kiwizaso Extremo (solo desktop): CPU siempre al 100 %, sin núcleos
+estacionados (core parking), boost agresivo, y PCI Express, USB y disco sin
+ahorro de energía. Consume más electricidad.
+Nivel Ultra (opcional): además, el procesador nunca descansa. Baja un poco la
+latencia, pero sube mucho la temperatura: solo con buena refrigeración.
+
+"Sin suspensión, hibernación ni inicio rápido": el PC no se duerme solo y apaga
+por completo. Viene marcado en desktop y desmarcado en notebook.
+
+
+AVANZADO (se pide confirmación aparte)
+--------------------------------------
+- Limpieza profunda (ResetBase): libera más espacio, pero las actualizaciones ya
+  instaladas no se podrán desinstalar. NO se deshace.
+- Desactivar compresión de memoria: solo con 16 GB de RAM o más. Mejora pequeña.
+- Modo MSI para la tarjeta de video: PRÓXIMAMENTE. Aparece en la app, pero
+  bloqueado; se habilitará en una próxima versión.
+
+QUÉ NO TOCA (a propósito)
+-------------------------
+Windows Defender, SmartScreen, Firewall, UAC, las actualizaciones de seguridad,
+las protecciones del procesador (Spectre/Meltdown), TPM y Secure Boot.
+Riot Vanguard EXIGE TPM y Secure Boot en Windows 11: si los desactiva, no podrá
+jugar LoL.
+
+Las apps quitadas no vuelven al deshacer: se reinstalan desde Microsoft Store.
+En notebooks, el plan de máximo rendimiento gasta más batería. Juegue enchufado.
+
+
+MODO JUEGO
+----------
+La vista Modo Juego muestra:
+- "Ahora jugando": el logo del juego en curso, el tiempo de partida y la RAM y
+  CPU en vivo.
+- "Sus juegos": su biblioteca con logos y portadas (Steam, Epic, Riot y los que
+  el Modo Juego ya detectó). Toque un juego para abrirlo.
+
+Además de la lista de abajo, detecta solo cualquier juego que abra desde las
+carpetas de Steam, Epic, Riot, Xbox, EA, Ubisoft o GOG.
+
+Reconoce LoL, Valorant, Fortnite, CS2, Dota 2, Apex, Roblox, Minecraft, GTA V,
+Rocket League, Overwatch 2, Call of Duty, PUBG y Genshin Impact. Otros juegos se
+agregan en "Agregar un juego a mano" con el nombre del proceso (Administrador de tareas ->
+Detalles, sin el .exe).
+
+Funciona en dos partes:
+- El MOTOR (C:\Kiwizaso\Kiwizaso-ModoJuego.exe, 20 KB): queda en la
+  bandeja, junto al reloj, y es el que optimiza los juegos. Se crea solo la primera
+  vez que presiona "Activar Modo Juego".
+- El PANEL (la ventana de Kiwizaso.exe): solo para configurar. Al cerrarlo con
+  la X se cierra por completo y no ocupa nada; el motor sigue en la bandeja.
+
+Ícono de la bandeja (rodaja de kiwi; gris = en pausa):
+- doble clic: abre el panel,
+- clic derecho: Abrir panel, Pausar/Reanudar, Liberar RAM ahora, Salir.
+
+Con "Iniciar con Windows" marcado, el motor arranca solo al encender el PC.
+
+El motor gasta lo mínimo: revisa cada 5 segundos si abrió un juego, no tiene
+ventana, lee RAM y energía directo de Windows y suelta su propia memoria después
+de cada partida. Nunca toca Discord ni Spotify. Su actividad queda en C:\Kiwizaso\modojuego.log.
+
+Cuando abre un juego:
+- baja la prioridad de navegadores, launchers y sincronizadores (OneDrive, Google
+  Drive, Dropbox) que sigan abiertos, y la devuelve a normal al terminar,
+- pausa las descargas de Windows Update y las reanuda al terminar,
+- Discord y Spotify siguen con prioridad normal y sin que se les quite RAM,
+- activa el plan de máximo rendimiento,
+- cierra OneDrive, Teams, Phone Link y Widgets (y, si marca la casilla, también
+  navegadores, Steam, Epic, EA y Battle.net),
+- intenta subir la prioridad del juego (Vanguard puede impedirlo; es normal),
+- en equipos con dos tarjetas de video, hace que el juego use la potente (se
+  aplica desde la segunda vez que lo abre),
+- solo si la RAM viene justa, libera RAM de los demás programas y vacía la
+  memoria en espera (esto último no en HDD, donde daría tirones),
+- si marca la casilla, bloquea la tecla Windows y el atajo de teclas especiales,
+- guarda RAM y CPU cada 5 segundos para el gráfico "Última partida".
+Después solo vuelve a liberar si la RAM libre baja del umbral de su gama (25 % en
+ultra baja, 10 % en alta). Vaciar la RAM cada pocos
+segundos, como hacen muchos "limpiadores", causa tirones en vez de evitarlos.
+Al cerrar el juego, vuelve al plan de energía anterior.
+El botón "Liberar RAM ahora" lo hace manualmente cuando quiera.
+Para otros juegos: escriba el nombre del proceso en "Agregar un juego a mano",
+en la vista Modo Juego.
+
+
+DESINSTALADOR
+-------------------------------------
+Menú Herramientas -> Desinstalador. Lista los programas y las apps de la Tienda,
+con buscador y orden por nombre, tamaño o fecha.
+- Desinstalar (o doble clic): abre el desinstalador del programa. Al terminar,
+  busca las carpetas y claves de registro que dejó y le muestra la lista para
+  que elija qué borrar.
+- Eliminación forzada: para programas que no se dejan desinstalar. No usa su
+  desinstalador; busca sus restos y usted revisa la lista antes de borrar.
+- Las carpetas van a la Papelera y el registro se respalda en
+  C:\Kiwizaso\desinstalados (doble clic en el .reg para devolverlo).
+- Nunca propone borrar carpetas de Windows, Program Files, AppData ni la carpeta
+  de otro programa instalado.
+
+
+RESTAURACIÓN
+------------
+Menú Herramientas -> Restauración: crea un punto de restauración cuando quiera
+(sin el límite de uno cada 24 horas), muestra los puntos guardados y abre el
+asistente de Windows para volver a uno anterior.
+
+
+PARA QUE EL HARDWARE RINDA AL 100 % (esto lo hace usted)
+---------------------------------------------------------
+Ningún programa hace que el hardware supere su capacidad. Lo que sí se puede es
+asegurarse de que funcione a su velocidad real:
+
+1. BIOS (se entra con Supr o F2 al encender):
+   - Active XMP (Intel) o EXPO / DOCP (AMD): sin esto, la RAM funciona más lenta
+     de lo que debería. Es el ajuste que más se nota.
+   - Active "Resizable BAR" / "Re-Size BAR" y "Above 4G Decoding".
+   - NO desactive TPM ni Secure Boot (Vanguard).
+2. Drivers:
+   - Tarjeta de video: desde nvidia.com/drivers o amd.com/support (no desde Windows Update).
+   - Chipset: desde la página de su placa madre o de AMD / Intel.
+3. Panel de NVIDIA (si tiene NVIDIA):
+   - Modo de baja latencia: Activado.
+   - Modo de control de energía: Preferir rendimiento máximo.
+4. Monitor: en Configuración -> Pantalla -> Configuración avanzada, ponga la
+   frecuencia más alta que permita (144 Hz, 165 Hz...). Conecte el cable a la
+   tarjeta de video, no a la placa madre.
+5. Temperatura: limpie el polvo de los ventiladores. Un PC caliente baja su velocidad solo.
+6. Internet: juegue con cable de red, no por Wi-Fi.
+
+
+DISCORD Y SPOTIFY MÁS LIVIANOS (se ajustan dentro de cada app)
+-------------------------------------------------------------
+Discord -> Configuración de usuario:
+- Superposición del juego: desactivada (es lo que más FPS quita).
+- Accesibilidad: desactive "Reproducir GIF automáticamente" y los emojis animados.
+- Voz y video: si su CPU es modesto, desactive la supresión de ruido (Krisp).
+- Avanzado -> Aceleración por hardware: si el juego usa mucho la tarjeta de video,
+  pruebe desactivarla.
+Spotify -> Configuración:
+- Desactive "Canvas" (los videos en bucle de las canciones).
+- Desactive "Mostrar superposición de escritorio".
+- Aceleración por hardware: misma recomendación que en Discord.
+
+
+LoL MÁS FLUIDO (dentro del juego, Opciones -> Video)
+----------------------------------------------------
+- Límite de FPS: el de su monitor, o "Sin límite" si el PC es potente.
+- Sincronización vertical: desactivada.
+- Antialiasing: desactivado si el PC es modesto.
+- Sombras y efectos: Bajo o Medio en PCs modestos.
+- En el cliente: Configuración -> Cliente -> "Cerrar el cliente durante la partida".

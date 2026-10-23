@@ -53,6 +53,25 @@ QUÉ HACE
 - Limpia temporales, caché de Windows Update y, opcional, componentes antiguos.
 
 
+PUNTAJE DE SALUD Y RECOMENDACIONES (Resumen)
+--------------------------------------------
+Al abrir la app se revisa el equipo y se muestra un puntaje de 0 a 100. Parte en
+100 y descuenta: 25 si aún no optimiza, 10 por cada aviso de la Revisión (máximo 40),
+5 o 10 si arrancan 6 o más programas con Windows y 5 si el Modo Juego está apagado.
+Debajo, "Recomendado para usted" muestra hasta 4 avisos, cada uno con su botón.
+
+
+MODO DE OPTIMIZACIÓN (Optimizar)
+--------------------------------
+- Seguro: solo ajustes que se deshacen por completo y no cambian cómo se ve ni cómo
+  se usa Windows.
+- Recomendado: lo que marca la gama de su PC (como antes).
+- Competitivo: además, más servicios fuera, efectos visuales al mínimo y plan
+  Extremo en desktop.
+Las barras junto a cada interruptor indican el impacto esperado en juegos (1 a 3).
+Es una guía, no una medición de su PC.
+
+
 GAMA DE SU PC (se detecta sola; se puede cambiar en Limpieza -> "Gama de su PC")
 ------------------------------------------------------------------------------
 Se calcula con la RAM, los hilos de CPU, el disco (HDD, SSD o NVMe) y si hay
@@ -161,6 +180,33 @@ Al cerrar el juego, vuelve al plan de energía anterior.
 El botón "Liberar RAM ahora" lo hace manualmente cuando quiera.
 Para otros juegos: escriba el nombre del proceso en "Agregar un juego a mano",
 en la vista Modo Juego.
+
+
+PILOTO AUTOMÁTICO (Resumen)
+---------------------------
+Con el interruptor encendido, Kiwizaso decide solo: usa la gama detectada, elige
+el modo (Competitivo en desktop de gama media alta o alta, Recomendado en el
+resto), marca los programas de arranque que se pueden quitar, ajusta el Modo
+Juego y lo deja activo e iniciando con Windows. Después le pregunta si aplica la
+optimización (crea punto de restauración antes).
+Mientras el Modo Juego está en la bandeja, cada semana borra temporales de más
+de 2 días y avisa si el disco del sistema queda con menos de 10 % libre. Nunca
+actúa durante una partida. No es una IA externa: no envía nada a internet.
+
+OTRAS MEJORAS
+-------------
+- Optimizar ahora desde el Resumen, con barra de progreso y aviso al terminar.
+  El botón de Optimizar dice cuántos cambios se aplicarán.
+- Limpieza de disco por categorías con su tamaño real: temporales y caché de
+  Windows Update, caché de navegadores y Papelera, con botón "Limpiar ahora".
+- Arranque: cada programa trae una sugerencia (quitar o mantener), con botones
+  "Marcar sugeridos" y "Quitar marcados" (vuelven con Deshacer cambios).
+- Revisión: "Poner X Hz" sube el monitor a la frecuencia máxima en un clic, y
+  avisa si el cable del monitor está en la placa madre y no en la tarjeta.
+- Restauración: "Volver aquí" en cada punto (reinicia el equipo) y "Deshacer
+  todos los cambios de Kiwizaso".
+- Modo Juego: cada acción tiene su interruptor (prioridad, Windows Update, plan
+  de energía, núcleos dedicados, cerrar launchers, tecla Windows, RAM).
 
 
 DESINSTALADOR
